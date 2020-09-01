@@ -30,16 +30,20 @@ class ModelApi(Resource):
     model = XGBClassifier()
     model.fit(x_train, y_train)
     # xgb.load_model('./models/model.json')
-    model.save_model('./models/test.json')
+    model.save_model('./models/breath_cancer')
 
 
   def get(self):
+    
     model = XGBClassifier()
-    model.load_model('./models/test.json')
-    # self.getFeatureImportances(model)    
-    return self.getTree(model)
+    model.load_model('./models/breath_cancer')
+    
 
-
+    return {
+      'tree': self.getTree(model),
+      'feature_importances': self.getFeatureImportances(model)
+    }
+    
 
     
 
@@ -101,4 +105,4 @@ class ModelApi(Resource):
 
 
   def getFeatureImportances(self, model):
-    return model.feature_importances_
+    return model.get_booster().get_score()

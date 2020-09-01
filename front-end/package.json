@@ -18,6 +18,8 @@
     "@types/styled-components": "^5.1.2",
     "axios": "^0.19.2",
     "d3": "^6.1.0",
+    "echarts": "^4.9.0",
+    "echarts-for-react": "^2.0.16",
     "react": "^16.13.1",
     "react-d3-tree": "^1.16.1",
     "react-dom": "^16.13.1",

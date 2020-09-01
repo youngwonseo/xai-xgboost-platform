@@ -29,7 +29,7 @@ const MainContainer: React.FC<MainContainerProps> = () => {
 
   return (
     <div className="App" style={{width: '100%', height: '100%'}}>
-      {model && <Tree data={model} orientation="vertical"/> }   
+      {model && <Tree data={model.tree} orientation="vertical"/> }   
     </div>
   );
 }

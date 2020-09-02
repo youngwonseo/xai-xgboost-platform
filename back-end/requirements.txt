@@ -3,3 +3,4 @@ flask-restful
 requests
 xgboost
 sklearn
+pandas

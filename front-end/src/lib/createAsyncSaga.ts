@@ -18,8 +18,6 @@ export default function createAsyncSaga(type: any, request: any) {
   return function*(action: any) {
     // yield put(startLoading(type)); // 로딩 시작
     try {
-
-      console.log('hi')
       const response = yield call(request, action.payload);
       yield put({
         type: SUCCESS,
@@ -27,11 +25,11 @@ export default function createAsyncSaga(type: any, request: any) {
         meta: response,
       });
     } catch (e) {
-      yield put({
-        type: FAILURE,
-        payload: e,
-        error: true,
-      });
+      // yield put({
+      //   type: FAILURE,
+      //   payload: e,
+      //   error: true,
+      // });
     }
     // yield put(finishLoading(type)); // 로딩 끝
   };
